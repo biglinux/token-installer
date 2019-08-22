@@ -1,0 +1,3 @@
+#!/bin/sh
+
+bigbashview /usr/share/bigbashview/bcc/apps/token/index.sh.htm -s 950x500 -i /usr/share/bigbashview/bcc/apps/token/token.png

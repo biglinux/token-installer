@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Configure or install Token
+Name[pt]=Configurar ou instalar Token
+Exec=token-installer
+Icon=/usr/share/bigbashview/bcc/apps/token/token.png
+Type=Application
+StartupNotify=true
+Categories=Utility;

@@ -1,0 +1,87 @@
+#!/bin/bash
+
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=token-installer
+
+# Import BigControlCenter base modules / Importa os módulos básicos do BigControlCenter
+# That's include jquery and materialize / Isso inclui o jquery e o materialize
+# http://materializecss.com/
+. /usr/share/bigbashview/bcc/shell/base.sh
+
+
+#Title/Description variables
+bcc_title="Configurar ou instalar Token"
+bcc_description=""
+# To disable logo use: bcc_logo="no"
+bcc_logo="token.png"
+
+# About variables
+# To disable about use: bcc_about="no"
+bcc_about="yes"
+bcc_about_license=$"GPL v2 or greater"
+bcc_about_by=$"Bruno Gonçalves"
+bcc_about_release_date=$"15/07/2017"
+bcc_about_url_code=$"https://github.com/biglinux/token-installer"
+bcc_about_url_project=$"https://www.biglinux.com.br"
+
+# Print header in screen
+bcc_header
+
+
+###############
+# Start Content
+
+echo '
+<style>
+a {
+    color: #0013fd;
+}
+</style>
+'
+
+
+echo '<div class=conteudo><br>'
+
+echo $"Ao instalar esta ferramenta já foram instalados diversos arquivos que são necessários para o funcionamento do token, mas ainda é preciso mais alguns passos."
+
+echo "<br><br>"
+
+if [ "$(groups $USER | grep scard)" != "" ]; then
+
+    echo $"Seu usuário, $USER, já faz parte do grupo scard e possui as permissões necessárias." '</a>'
+
+    echo '<br><br>'
+
+    echo $"Agora é preciso instalar os arquivos específicos do seu token, existem diversos modelos de vários fabricantes, em nosso fórum temos um tópico que reune dicas de instalação, e contamos com a ajuda dos usuários para aperfeiçoa-las."
+
+    echo '<br><br>'
+
+
+    echo '<a href="forum.sh.htm">' $"Clique aqui para acessar o tópico sobre tokens no fórum BigLinux."
+
+else
+    echo '<a href="permission.sh.htm">' $"O primeiro passo é clicar aqui e dar permissão ao seu usuário, $USER, acessar o token, adicionando-o ao grupo scard." '</a>'
+
+fi
+
+
+
+
+
+###################
+# Close content div
+echo '</div></div>'
+
+##############
+# Start footer
+echo '<div id="bcc_footer">'
+      echo '<div id="bcc_footer_right">'
+        echo '<a href="/usr/share/bigbashview/close.sh" class="waves-effect waves-light btn blue-grey lighten-1"><img src=cancel.png>'$"Fechar"'</a>'
+      echo '</div>'
+echo '</div>'
+echo '</form>'
+
+
+#########
+# The end
+echo '</body>'
