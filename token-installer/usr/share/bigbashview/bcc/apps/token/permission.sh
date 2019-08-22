@@ -1,4 +1,4 @@
 #!/bin/bash
 
 addgroup scard
-adduser $USER scard
+adduser $(cat /tmp/permissiontoken) scard

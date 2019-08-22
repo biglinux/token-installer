@@ -31,8 +31,8 @@ bcc_header
 ###############
 # Start Content
 
-
-bigsudo permission.sh
+echo "$USER" > /tmp/permissiontoken
+bigsudo /usr/share/bigbashview/bcc/apps/token/permission.sh
 
 
 
